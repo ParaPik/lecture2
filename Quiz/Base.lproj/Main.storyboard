@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--GreetingController-->
@@ -68,6 +69,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="accountNameField" destination="R8I-pY-bzo" id="vk9-Qv-Yjb"/>
+                        <segue destination="V7d-1s-SaV" kind="show" identifier="showQuizSegue" id="NFa-tM-tYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,9 +87,45 @@
                     <view key="view" contentMode="scaleToFill" id="9vQ-gf-xHG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sc-jU-dLd">
+                                <rect key="frame" x="0.0" y="28" width="320" height="189"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-zS-uzc">
+                                <rect key="frame" x="0.0" y="298" width="320" height="270"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJW-Lb-dsx">
+                                <rect key="frame" x="0.0" y="217" width="320" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="IBT-rj-FeL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sc-jU-dLd" firstAttribute="leading" secondItem="9vQ-gf-xHG" secondAttribute="leading" id="2Ib-am-uj3"/>
+                            <constraint firstAttribute="trailing" secondItem="0sc-jU-dLd" secondAttribute="trailing" id="5xI-KW-PN9"/>
+                            <constraint firstItem="kJW-Lb-dsx" firstAttribute="leading" secondItem="9vQ-gf-xHG" secondAttribute="leading" id="C5h-6v-R5Z"/>
+                            <constraint firstItem="DTQ-zS-uzc" firstAttribute="top" secondItem="kJW-Lb-dsx" secondAttribute="bottom" id="Du9-Ni-6LS"/>
+                            <constraint firstAttribute="trailing" secondItem="DTQ-zS-uzc" secondAttribute="trailing" id="Yfu-ga-ehR"/>
+                            <constraint firstItem="0sc-jU-dLd" firstAttribute="height" secondItem="9vQ-gf-xHG" secondAttribute="height" multiplier="1:3" id="bNt-bP-n0w"/>
+                            <constraint firstItem="0sc-jU-dLd" firstAttribute="top" secondItem="7fC-jQ-8Xl" secondAttribute="bottom" constant="8" id="bro-4i-N6t"/>
+                            <constraint firstAttribute="trailing" secondItem="kJW-Lb-dsx" secondAttribute="trailing" id="k0Q-sF-uLm"/>
+                            <constraint firstItem="Rsv-lj-5CN" firstAttribute="top" secondItem="DTQ-zS-uzc" secondAttribute="bottom" id="o6E-PS-jRK"/>
+                            <constraint firstItem="kJW-Lb-dsx" firstAttribute="top" secondItem="0sc-jU-dLd" secondAttribute="bottom" id="pjB-E2-dI1"/>
+                            <constraint firstItem="DTQ-zS-uzc" firstAttribute="leading" secondItem="9vQ-gf-xHG" secondAttribute="leading" id="xsK-1f-wW2"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="testImage" destination="0sc-jU-dLd" id="Br7-B2-zLj"/>
+                        <outlet property="testQuestion" destination="kJW-Lb-dsx" id="SmY-pS-27q"/>
+                        <outlet property="testTable" destination="DTQ-zS-uzc" id="S0P-zv-AfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-4d-lZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,7 +23,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startTaped(sender: AnyObject) {
-        Account.AccountName = accountNameField.text!
+        if let text = accountNameField.text {
+            Account.AccountName = text
+        } else {
+            Account.AccountName = "NoName"
+        }
+        
+    performSegueWithIdentifier("showQuizSegue", sender: nil)
     }
 
 }
