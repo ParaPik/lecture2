@@ -18,6 +18,7 @@
 		5976EF4A1D3269D700713696 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976EF491D3269D700713696 /* Question.swift */; };
 		5976EF4C1D326C1D00713696 /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976EF4B1D326C1D00713696 /* QuestionProvider.swift */; };
 		5976EF4E1D326C6800713696 /* FileQuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976EF4D1D326C6800713696 /* FileQuestionProvider.swift */; };
+		5976EF501D328A5A00713696 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976EF4F1D328A5A00713696 /* FinishController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5976EF491D3269D700713696 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5976EF4B1D326C1D00713696 /* QuestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
 		5976EF4D1D326C6800713696 /* FileQuestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileQuestionProvider.swift; sourceTree = "<group>"; };
+		5976EF4F1D328A5A00713696 /* FinishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				5976EF491D3269D700713696 /* Question.swift */,
 				5976EF4B1D326C1D00713696 /* QuestionProvider.swift */,
 				5976EF4D1D326C6800713696 /* FileQuestionProvider.swift */,
+				5976EF4F1D328A5A00713696 /* FinishController.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				5976EF4E1D326C6800713696 /* FileQuestionProvider.swift in Sources */,
 				5976EF311D324CCC00713696 /* AppDelegate.swift in Sources */,
 				5976EF4C1D326C1D00713696 /* QuestionProvider.swift in Sources */,
+				5976EF501D328A5A00713696 /* FinishController.swift in Sources */,
 				5976EF461D3262CF00713696 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

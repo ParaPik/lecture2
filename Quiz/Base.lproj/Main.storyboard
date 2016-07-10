@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-pY-bzo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tester" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-pY-bzo">
                                 <rect key="frame" x="20" y="269" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -125,11 +125,64 @@
                         <outlet property="testImage" destination="0sc-jU-dLd" id="Br7-B2-zLj"/>
                         <outlet property="testQuestion" destination="kJW-Lb-dsx" id="SmY-pS-27q"/>
                         <outlet property="testTable" destination="DTQ-zS-uzc" id="S0P-zv-AfI"/>
+                        <segue destination="gRf-ry-yNw" kind="show" identifier="showResultSegue" id="Zni-U3-RYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-4d-lZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="299"/>
+        </scene>
+        <!--Finish Controller-->
+        <scene sceneID="r8H-x7-XiR">
+            <objects>
+                <viewController id="gRf-ry-yNw" customClass="FinishController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oky-KV-kz7"/>
+                        <viewControllerLayoutGuide type="bottom" id="eDG-Xh-nmw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FDq-Hr-4Eg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-kn-8wD">
+                                <rect key="frame" x="0.0" y="173" width="320" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="8t1-ef-tDY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq8-I1-vEF">
+                                <rect key="frame" x="92" y="434" width="137" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jrq-uC-IYt"/>
+                                </constraints>
+                                <state key="normal" title="One more time?"/>
+                                <connections>
+                                    <segue destination="Uhb-mx-f0u" kind="unwind" unwindAction="unwindSegue:" id="0sM-rJ-J4Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lq8-I1-vEF" firstAttribute="leading" secondItem="FDq-Hr-4Eg" secondAttribute="leading" constant="92" id="2eV-zs-1k9"/>
+                            <constraint firstItem="eCq-kn-8wD" firstAttribute="centerY" secondItem="FDq-Hr-4Eg" secondAttribute="centerY" id="BwF-D1-NVr"/>
+                            <constraint firstAttribute="trailing" secondItem="eCq-kn-8wD" secondAttribute="trailing" id="Tv0-43-7eA"/>
+                            <constraint firstItem="Lq8-I1-vEF" firstAttribute="top" secondItem="eCq-kn-8wD" secondAttribute="bottom" constant="39" id="rap-fy-Xs8"/>
+                            <constraint firstItem="eCq-kn-8wD" firstAttribute="leading" secondItem="FDq-Hr-4Eg" secondAttribute="leading" id="wuu-VC-nRI"/>
+                            <constraint firstAttribute="trailing" secondItem="Lq8-I1-vEF" secondAttribute="trailing" constant="91" id="xNe-b8-0Vn"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="finishText" destination="eCq-kn-8wD" id="IeD-bG-fOA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqj-FH-nZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Uhb-mx-f0u" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="299"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,7 @@ class FileQuestionProvider : QuestionProvider {
     func parse(json : [String : AnyObject]) -> Question {
         
         let questionText = json["question"] as! String
-        let correctAnswer = json["answer"] as! String
+        let correctAnswer = json["correctAnswer"] as! String
         let image = json["image"] as! String
         let answers = json["answers"] as! [String]
         

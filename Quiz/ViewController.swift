@@ -31,6 +31,10 @@ class ViewController: UIViewController {
         
     performSegueWithIdentifier("showQuizSegue", sender: nil)
     }
+    
+    @IBAction func unwindSegue(segue : UIStoryboardSegue) {
+        
+    }
 
 }
 
