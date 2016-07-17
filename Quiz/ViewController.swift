@@ -23,17 +23,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startTaped(sender: AnyObject) {
-        if let text = accountNameField.text {
+        /*if let text = accountNameField.text {
             Account.AccountName = text
         } else {
             Account.AccountName = "NoName"
-        }
+        }*/
         
-    performSegueWithIdentifier("showQuizSegue", sender: nil)
+    performSegueWithIdentifier("showQuizSegue", sender: PerformTextSegue(text: accountNameField.text!))
     }
     
     @IBAction func unwindSegue(segue : UIStoryboardSegue) {
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       let transition = sender as! PerformSegue
+        transition.performSegue(viewController: segue.destinationViewController)
     }
 
 }

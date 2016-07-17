@@ -18,6 +18,7 @@ class QuizController : UIViewController {
     
     var questions : QuestionProvider!
     var currentQuestion : Question!
+    var userName : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,17 @@ class QuizController : UIViewController {
         
         return result
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let transition = sender as! PerformSegue
+        transition.performSegue(viewController: segue.destinationViewController)
+    }
+}
+
+extension QuizController : ControllerWithText {
+    func setControllerText(text: String) {
+        userName = text
+    }
 }
 
 extension QuizController : UITableViewDataSource {
@@ -57,16 +69,12 @@ extension QuizController : UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "cellIdentifier"
+        let cellIdentifier = "quizIdentifier"
         
-        var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! QuizTableViewCell
         
         let index = indexPath.row
-        cell.textLabel?.text = currentQuestion.questionAnswers[index]
+        cell.quizAnswer.text = currentQuestion.questionAnswers[index]
         
         return cell
         
@@ -94,7 +102,7 @@ extension QuizController : UITableViewDelegate {
         } else {
             let shown = showNextQuestion()
             if !shown {
-                performSegueWithIdentifier("showResultSegue", sender: nil)
+                performSegueWithIdentifier("showResultSegue", sender: PerformTextSegue(text: userName))
             }
         }
     }

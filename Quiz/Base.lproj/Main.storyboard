@@ -91,9 +91,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sc-jU-dLd">
                                 <rect key="frame" x="0.0" y="28" width="320" height="189"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-zS-uzc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-zS-uzc">
                                 <rect key="frame" x="0.0" y="298" width="320" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="quizIdentifier" rowHeight="61" id="I3x-zy-8HN" customClass="QuizTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I3x-zy-8HN" id="KUb-B2-FMC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-Y4-WP2">
+                                                    <rect key="frame" x="8" y="8" width="304" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UHq-Y4-WP2" secondAttribute="bottom" constant="8" id="CHp-Ng-Nov"/>
+                                                <constraint firstAttribute="trailing" secondItem="UHq-Y4-WP2" secondAttribute="trailing" constant="8" id="IGT-Wa-QQl"/>
+                                                <constraint firstItem="UHq-Y4-WP2" firstAttribute="leading" secondItem="KUb-B2-FMC" secondAttribute="leading" constant="8" id="aaL-Ad-hKD"/>
+                                                <constraint firstItem="UHq-Y4-WP2" firstAttribute="top" secondItem="KUb-B2-FMC" secondAttribute="top" constant="8" id="e38-Us-njL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quizAnswer" destination="UHq-Y4-WP2" id="CXn-3r-5VK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJW-Lb-dsx">
                                 <rect key="frame" x="0.0" y="217" width="320" height="81"/>
@@ -125,7 +152,7 @@
                         <outlet property="testImage" destination="0sc-jU-dLd" id="Br7-B2-zLj"/>
                         <outlet property="testQuestion" destination="kJW-Lb-dsx" id="SmY-pS-27q"/>
                         <outlet property="testTable" destination="DTQ-zS-uzc" id="S0P-zv-AfI"/>
-                        <segue destination="gRf-ry-yNw" kind="show" identifier="showResultSegue" id="Zni-U3-RYY"/>
+                        <segue destination="gRf-ry-yNw" kind="show" identifier="showResultSegue" id="TAE-P4-HhF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-4d-lZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
